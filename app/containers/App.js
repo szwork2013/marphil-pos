@@ -1,4 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+injectTapEventPlugin();
 
 export default class App extends Component {
   static propTypes = {

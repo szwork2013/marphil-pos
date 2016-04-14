@@ -1,0 +1,10 @@
+.gridlist {
+  display: flex;
+  overflow-y: scroll;
+}
+
+.gridtile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
