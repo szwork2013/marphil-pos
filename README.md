@@ -1,4 +1,4 @@
 # marphil-pos
 electron-react-boilerplate
 
-Point of Sale System for Marphil-Hardware
+Touch Screen POS System for Marphil Hardware
