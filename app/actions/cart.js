@@ -9,3 +9,11 @@ export function addCartItem(item, id) {
     id
   };
 }
+
+export function removeCartItem(item, id) {
+  return {
+    type: REMOVE_CART_ITEM,
+    item: item,
+    id
+  };
+}

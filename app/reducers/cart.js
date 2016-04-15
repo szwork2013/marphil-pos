@@ -7,7 +7,7 @@ export default function cart(state = [], action) {
         ...state,
         {
           item: action.item,
-          id: action.id  
+          id: action.id
         }
       ];
     default:

@@ -1,24 +1,24 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import LazyLoad from 'react-lazy-load';
 import { Row } from 'react-bootstrap';
-import { GridList, GridTile, CircularProgress  } from 'material-ui';
+import { GridList, GridTile, CircularProgress } from 'material-ui';
 import style from './ItemGrid.css';
 
 const ItemGrid = ({ items, addCartItem }) => (
   <div>
     <GridList cols={4} className={style.gridlist}>
     {
-      items.map(i => <Item addCartItem={addCartItem} item={i.name} key={i.id}/>)
+      items.map(i => <Item addCartItem={addCartItem} item={i.name} key={i.id} />)
     }
     {
-      items.map(i => <Item addCartItem={addCartItem} item={i.name} id={i.id} key={i.id}/>)
+      items.map(i => <Item addCartItem={addCartItem} item={i.name} id={i.id} key={i.id} />)
     }
     </GridList>
   </div>
 );
 
 const Item = ({ item, id, addCartItem }) => (
-  <GridTile 
+  <GridTile
     onClick={() => addCartItem(item, id)}
     title={item}
     subtitle={<span>Ito ay <b>{item}</b> </span>}
