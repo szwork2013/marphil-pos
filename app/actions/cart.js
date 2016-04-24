@@ -5,15 +5,15 @@ export const UPDATE_CART_ITEM = 'UPDATE_CART_ITEM';
 export function addCartItem(item, id) {
   return {
     type: ADD_CART_ITEM,
-    item: item,
-    id
+    id,
+    item
   };
 }
 
 export function removeCartItem(item, id) {
   return {
     type: REMOVE_CART_ITEM,
-    item: item,
-    id
+    id,
+    item
   };
 }

@@ -1,9 +1,10 @@
-import { INITIAL_DATA } from '../actions/item';
+import { FETCH_ALL_ITEMS, ADD_ITEM } from '../actions/item';
 
 export default function items(state = [], action) {
   switch (action.type) {
-    case INITIAL_DATA:
-      return action.init;
+    case FETCH_ALL_ITEMS:
+      return action.items;
+    case ADD_ITEM:
     default:
       return state;
   }

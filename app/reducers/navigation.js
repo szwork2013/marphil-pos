@@ -1,21 +1,21 @@
 import { HANDLE_NAV, TAB_INDEX } from '../actions/navigation';
 
 const init = {
-  tabindex: 0,
-  leftnav: false
+  tabIndex: 0,
+  isNavOpen: false
 };
 
 export default function navigation(state = init, action) {
   switch (action.type) {
     case HANDLE_NAV:
       return {
-        tabindex: state.tabindex,
-        leftnav: !state.leftnav
+        tabIndex: state.tabIndex,
+        isNavOpen: !state.isNavOpen
       };
     case TAB_INDEX:
       return {
-        tabindex: action.index,
-        leftnav: state.leftnav
+        tabIndex: action.index,
+        isNavOpen: state.isNavOpen
       };
     default:
       return state;

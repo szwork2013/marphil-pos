@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Row } from 'react-bootstrap';
-import { Tabs, Tab, FontIcon } from 'material-ui';
+import Tabs from 'material-ui/lib/tabs/tabs';
+import Tab from 'material-ui/lib/tabs/tab';
+import FontIcon from 'material-ui/lib/font-icon';
 import style from './BottomTab.css';
 
-const BottomTab = ({ tabindex, changeTabIndex }) => (
+const BottomTab = ({ tabIndex, changeTabIndex }) => (
   <Row>
-    <Tabs value={tabindex} className={style.tabs}>
+    <Tabs value={tabIndex} className={style.tabs}>
       <Tab
         icon={<FontIcon className="material-icons">phone</FontIcon>}
         label="A"
@@ -27,5 +29,10 @@ const BottomTab = ({ tabindex, changeTabIndex }) => (
     </Tabs>
   </Row>
 );
+
+BottomTab.propTypes = {
+  tabIndex: PropTypes.number,
+  changeTabIndex: PropTypes.func,
+};
 
 export default BottomTab;
