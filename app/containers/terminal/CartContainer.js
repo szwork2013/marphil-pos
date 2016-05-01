@@ -16,7 +16,7 @@ class CartContainer extends Component {
     return (
       <Col md={3} style={{ height: '100vh' }}>
         <CartSummary>
-          {cart.map(i => <CartItem item={i.item} key={i.id} />)}
+          {cart.map((itm, idx) => <CartItem item={itm.item} key={idx} />)}
         </CartSummary>
       </Col>
     );

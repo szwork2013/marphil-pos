@@ -1,0 +1,24 @@
+.login {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #E0E0E0;
+  background-image: url("https://lh3.googleusercontent.com/-hjnH8m2rEz8/UcOabw_svuI/AAAAAAAAFiA/V01JdE-BE-sjH-qY8mhvukOiJDRhgifIgCL0B/w1044-h448-no/Rocky%2BMountains%2B%2528Day%2529.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content {
+  display: block;
+  width: 400px;
+  height: 230px;
+  padding: 20px;
+  background-color: white;
+}
+
+.inputs {
+  width: 100% !important;
+  margin-top: 10px;
+}

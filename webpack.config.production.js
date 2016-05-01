@@ -11,7 +11,7 @@ const config = Object.create(baseConfig);
 
 config.devtool = 'source-map';
 
-config.entry = './app/index';
+config.entry = './src/app/index';
 
 config.output.publicPath = '../dist/';
 

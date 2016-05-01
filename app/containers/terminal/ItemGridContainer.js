@@ -9,7 +9,7 @@ import LeftNav from 'material-ui/lib/left-nav';
 import ItemGrid from './../../components/terminal/ItemGrid';
 import BottomTab from './../../components/terminal/BottomTab';
 import * as NavActions from './../../actions/navigation';
-import * as ItemActions from './../../actions/item';
+import * as ItemActions from './../../actions/items';
 import { addCartItem } from './../../actions/cart';
 
 class ItemGridContainer extends Component {
