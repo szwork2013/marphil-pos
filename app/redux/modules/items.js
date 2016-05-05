@@ -1,9 +1,9 @@
 import Firebase from 'firebase';
+const ref = new Firebase('vivid-torch-4276.firebaseio.com');
 
 const FETCH_ALL_ITEMS = 'FETCH_ALL_ITEMS';
 const ADD_NEW_ITEM = 'ADD_NEW_ITEM';
 const NEW_ITEM = 'NEW_ITEM';
-const ref = new Firebase('vivid-torch-4276.firebaseio.com');
 
 export default function items(state = [], action) {
   switch (action.type) {
@@ -40,9 +40,9 @@ export function listenToFirebase() {
 }
 
 export function addItem(itemObj) {
-  return dispatch => (
+  return dispatch => {
     ref.child(`items/${itemObj.name}`).set(itemObj)
       .then(item => dispatch({ type: ADD_NEW_ITEM, item }))
-      .catch(err => console.log(err))
-  );
+      .catch(err => console.log(err));
+  };
 }

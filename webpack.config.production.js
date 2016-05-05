@@ -11,7 +11,7 @@ const config = Object.create(baseConfig);
 
 config.devtool = 'source-map';
 
-config.entry = './src/app/index';
+config.entry = './app/index';
 
 config.output.publicPath = '../dist/';
 
@@ -28,7 +28,7 @@ config.plugins.push(
       screw_ie8: true,
       warnings: false
     }
-  }),
+  })
 );
 
 config.target = webpackTargetElectronRenderer(config);

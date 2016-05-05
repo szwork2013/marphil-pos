@@ -14,19 +14,22 @@ const init = {
   }
 };
 
-export default function login(state = init, action) {
+export default function reducer(state = init, action) {
   switch (action.type) {
     case LOGIN_SUCCESS:
       return {
         email: action.authData.password.email,
-        error: null
+        error: {
+          msg: null,
+          code: null,
+        }
       };
     case LOGIN_ERROR:
       return {
         email: null,
         error: {
           msg: action.err.message,
-          code: action.err.code
+          code: action.err.code,
         }
       };
     case REMOVE_ERORR:
@@ -34,7 +37,7 @@ export default function login(state = init, action) {
         email: null,
         error: {
           msg: null,
-          code: null
+          code: null,
         }
       };
     default:
@@ -52,9 +55,10 @@ export function verifyCreds(email, password, role) {
   return dispatch => (
     ref.authWithPassword({ email, password }, { remember: 'sessionOnly' })
     .then(authData => {
-      dispatch({ type: LOGIN_SUCCESS, authData });
-      if (role === 'admin') hashHistory.push('/dashboard');
+      console.log(role);
+      if (role === 'dashboard') hashHistory.push('/dashboard');
       else hashHistory.push('/terminal');
+      dispatch({ type: LOGIN_SUCCESS, authData });
     })
     .catch(err => dispatch({ type: LOGIN_ERROR, err }))
   );

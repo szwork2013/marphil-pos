@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 injectTapEventPlugin();
@@ -8,9 +9,19 @@ export default class App extends Component {
     children: PropTypes.element.isRequired
   };
 
+  static childContextTypes = {
+    muiTheme: PropTypes.object.isRequired
+  };
+
+  getChildContext() {
+    return {
+      muiTheme: getMuiTheme()
+    };
+  }
+
   render() {
     return (
-      <div>
+      <div className="container-fluid">
         {this.props.children}
         {
           (() => {
@@ -24,5 +35,3 @@ export default class App extends Component {
     );
   }
 }
-
-export default App;
